@@ -1,0 +1,110 @@
+<div class="row top7 ">
+    <div class="col-4">
+      <cf-reservations> </cf-reservations>
+    </div>
+<div class="col">
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Mes Reservations</h2>
+    </div>
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+         <a href="#enccours" class="nav-link active" data-toggle="tab">En Cours</a>
+      </li>
+      <li class="nav-item">
+        <a href="#avenir" class="nav-link" data-toggle="tab">A Venir</a>
+      </li>
+      <li class="nav-item">
+        <a href="#passes" class="nav-link" data-toggle="tab">Passées</a>
+       </li>
+  </ul>
+<div class="tab-content">
+<div class="tab-pane fade " id="enccours">
+  <div class="panel-body">
+    <table class="table table-striped">
+  
+      <tbody>
+        <tr *ngFor="let r of resa_en_cours; index as i ">
+          <td style="font-size:20px">N°{{r.id_reservation}}
+          </td>
+          <td><span class="text-success" style="font-size:20px">{{r.nom_modele}}</span>&nbsp;&nbsp;{{r.nom_vehicule}}<br>
+            {{r.nom_parking}} le {{r.date_depart_prevue | date: 'dd/MM/yy'}} à 
+            {{r.date_depart_prevue | date: 'HH:mm' :'UTC'}} / 
+            {{r.date_retour_prevue | date: 'dd/MM/yy'}} à 
+            {{r.date_retour_prevue | date: 'HH:mm' :'UTC'}}
+            
+          </td>
+          <td>
+            <button class="btn"><i class="fa fa-edit fa-2x "  style="color:green"></i></button>
+            
+          </td>
+        <td>
+          <button class="btn" (click)="openConfirmationDialog(r.id_reservation,i,1)" ><i class="fa fa-trash fa-2x"  style="color:red"></i></button>
+              
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="tab-pane fade  show active" id="avenir" #avenir>
+<div class="panel-body">
+  <table class="table table-striped">
+
+    <tbody>
+      <tr *ngFor="let r of resa_en_avenir; index as i ">
+        <td style="font-size:20px">N°{{r.id_reservation}}
+        </td>
+        <td><span class="text-success" style="font-size:20px">{{r.nom_modele}}</span>&nbsp;&nbsp;{{r.nom_vehicule}}<br>
+          {{r.nom_parking}} le {{r.date_depart_prevue | date: 'dd/MM/yy'}} à 
+          {{r.date_depart_prevue | date: 'HH:mm' :'UTC'}} / 
+          {{r.date_retour_prevue | date: 'dd/MM/yy'}} à 
+          {{r.date_retour_prevue | date: 'HH:mm' :'UTC'}}
+          
+        </td>
+        <td>
+          <button class="btn"><a class="fa fa-edit fa-2x" [routerLink]="['/reservation', r.id_reservation]"  style="color:green"></a></button>
+          
+        </td>
+      <td>
+        <button class="btn" (click)="openConfirmationDialog(r.id_reservation,i,2)" ><i class="fa fa-trash fa-2x"  style="color:red"></i></button>
+            
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+<div class="tab-pane fade" id="passes">
+  <div class="panel-body">
+    <table class="table table-striped">
+  
+      <tbody>
+        <tr *ngFor="let r of resa_en_passes; index as i">
+          <td style="font-size:20px">N°{{r.id_reservation}}
+          </td>
+          <td><span class="text-success" style="font-size:20px">{{r.nom_modele}}</span>&nbsp;&nbsp;{{r.nom_vehicule}}<br>
+            {{r.nom_parking}} le {{r.date_depart_prevue | date: 'dd/MM/yy'}} à 
+            {{r.date_depart_prevue | date: 'HH:mm' :'UTC'}} / 
+            {{r.date_retour_prevue | date: 'dd/MM/yy'}} à 
+            {{r.date_retour_prevue | date: 'HH:mm' :'UTC'}}
+            
+          </td>
+          <td>
+            <button class="btn"><i class="fa fa-edit fa-2x "  style="color:green"></i></button>
+            
+          </td>
+        <td>
+          <button class="btn" (click)="openConfirmationDialog(r.id_reservation,i,3)"><i class="fa fa-trash fa-2x"  style="color:red"></i></button>
+              
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+    
+  </div>
+</div>

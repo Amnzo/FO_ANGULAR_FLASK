@@ -1,0 +1,26 @@
+
+<div class="login-wrapper">
+    <div class="card">
+        <div class="card-body">
+
+
+     
+
+     <div mat-dialog-content>
+
+       <p>Veuillez entrer le code de votre entreprise</p>
+      <mat-form-field>
+        <mat-label>code entreprise</mat-label>
+        <input matInput [(ngModel)]="data.code_entreprise">
+       </mat-form-field>
+        </div>
+
+       <div mat-dialog-actions>
+
+        <button  class="mat-raised-button mat-primary" mat-button [mat-dialog-close]="data.code_entreprise" cdkFocusInitial>Valider</button>
+        
+        </div>
+       </div>
+     </div>
+     
+</div>

@@ -1,0 +1,79 @@
+
+<div class="card ">
+
+  <h5 class="card-header info-color white-text text-center py-6">
+      <strong>Création Réservation</strong>
+  </h5>
+
+  <!--Card content-->
+  <div class="card-body px-lg-4">
+
+      <!-- Form -->
+      <form  style="color: #757575;" action="#!">
+
+        <div class="form-group ">
+          <label for="formGroupExampleInput">Utilisateur</label>
+          <select  class="form-control"  
+             #userSelect
+          (change)='formulepro(userSelect.value)'>>
+            <option value="0">Please select a user</option>
+            <option *ngFor="let u of allusers" value={{u.id_utilisateur}}>
+              {{u.lastName}} {{u.firstName}} ({{u.nom_client}})
+            </option>
+          </select>
+  
+  
+        </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput">Formule</label>
+          <select  class="form-control" #formuleSelect 
+          (change)="getparks(formuleSelect.value)">
+            <option value="0">--All--</option>
+            <option *ngFor="let f of formule_pro" value={{f.id_formule}}>
+              {{f.nom_formule}}
+            </option>
+          </select>
+        </div>
+  
+        <div class="form-group">
+          <label for="formGroupExampleInput">Parking</label>
+          <select  class="form-control">
+            <option value="0">--All--</option>
+            <option *ngFor="let p of parkings" value={{p.id_parking}}>
+              {{p.nom_parking}}
+            </option>
+          </select>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label for="inputCity">Date Départ</label>
+            <div class="input-group">
+              <input class="form-control" placeholder="yyyy-mm-dd"
+                     name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </form>
+      <!-- Form -->
+      
+
+
+
+      <ngb-timepicker [(ngModel)]="time" [seconds]="seconds"></ngb-timepicker>
+
+  
+      <pre>Selected time: {{time | json}}</pre>
+      <pre>Model: {{ model | json }}</pre>
+
+  </div>
+
+</div>
+<!-- Material form subscription -->
+    
+
+

@@ -1,0 +1,63 @@
+<main role="main" class="container">
+    <div class="jumbotron">
+      <h1>Home</h1>
+      <p class="lead">
+        Code de bonne conduite de l'AutoPartage
+        Le code de bonne conduite de l'Autopartage définit les comportements que doivent adopter tous les conducteurs qui utilisent le service. Il repose sur les principes de respect, de civisme et de savoir-vivre. Tous les conducteurs sont invités à lire le Code de bonne conduite, à attester en avoir compris les dispositions et à s'engager à s'y conformer.
+      </p>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        <cf-reservations> </cf-reservations>
+      </div>
+      <div class="col">
+        <p class="h2">Code de bonne conduite de l'AutoPartage</p>
+        <p class="h6">Le code de bonne conduite de l'Autopartage définit les comportements que doivent adopter tous les conducteurs qui utilisent le service. Il repose sur les principes de respect, de civisme et de savoir-vivre. Tous les conducteurs sont invités à lire le Code de bonne conduite,
+           à attester en avoir compris les dispositions et à s'engager à s'y conformer.</p>
+
+           
+
+
+                <table class="table">
+
+                  <tbody>
+                    <tr  *ngFor="let c of consigne">
+                      <td>
+                        <div class="card">
+                          <h5 class="card-header info-color white-text text-center py-6">
+                              <strong>{{c.name}}</strong>
+                          </h5>
+                          <!--Card content-->
+                          <div class="card-body px-lg-4">
+                            {{c.desc}}
+                          </div>
+                        </div>
+    
+                      </td>
+                      <td>
+                        <div class="card">
+                          <h5 class="card-header info-color white-text text-center py-6">
+                              <strong>{{c.name2}}</strong>
+                          </h5>
+                          <!--Card content-->
+                          <div class="card-body px-lg-4">
+                            {{c.desc2}}
+                          </div>
+                        </div>
+    
+                      </td>
+                    </tr>
+    
+                  </tbody>
+                </table>
+
+            
+      </div>
+      
+    </div>
+</main>
+
+
+
+
+

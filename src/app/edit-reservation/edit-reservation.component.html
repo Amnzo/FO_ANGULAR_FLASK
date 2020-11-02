@@ -1,0 +1,115 @@
+
+
+
+<div class="row top7 ">
+    <div class="col-4">
+      <cf-reservations> </cf-reservations>
+    </div>
+    <div class="col-1">
+       
+      </div>
+
+<div class="col-md-6" >
+    <h2 class="text-center">Modification d'une réservation</h2>
+
+        <div class="form-group row">
+          <label for="id_reservation" class="col-sm-5 col-form-label">Réservation n°</label>
+          <div class="col-sm-7">
+            <input [value] = "id_reservation" [readonly]="this.isEditable" type="text" class="form-control" id="id_reservation"  />
+          </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-5 col-form-label">Utilisateur</label>
+            <div class="col-sm-7">
+              <input  [value] = "login" type="text" class="form-control" id="login"  [readonly]="this.isEditable" >
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-5 col-form-label">Modèle</label>
+            <div class="col-sm-7">
+              <input [value] = "nom_modele" type="text" class="form-control" id="inputEmail3"  [readonly]="this.isEditable" >
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-5 col-form-label">Immatriculation</label>
+            <div class="col-sm-7">
+              <input [value] = "nom_vehicule" type="text" class="form-control" id="inputEmail3"  [readonly]="this.isEditable" >
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-5 col-form-label">Parking de départ</label>
+            <div class="col-sm-7">
+              <input [value] = "nom_parking" type="text" class="form-control" id="inputEmail3"  [readonly]="this.isEditable">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-5 col-form-label">Parking de retour</label>
+            <div class="col-sm-7">
+              <input  [value] = "nom_parking" type="text" class="form-control" id="inputEmail3"  [readonly]="this.isEditable" >
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-5 col-form-label">Départ le</label>
+            <div class="col-sm-7">
+              <input [value]= "(date_depart_prevue| date: 'dd/MM/yy à ')+ ( date_depart_prevue| date: 'HH:mm' :'UTC')"
+                type="text" class="form-control" id="inputEmail3" [readonly]="this.isEditable" >
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-5 col-form-label">Retour le</label>
+            <div class="col-sm-7">
+              <input [value]= "(date_retour_prevue| date: 'dd/MM/yy à ')+ ( date_retour_prevue| date: 'HH:mm' :'UTC')"
+                type="text" class="form-control" id="inputEmail3" [readonly]="this.isEditable" >
+            </div>
+          </div>
+
+          <!-- <button class="btn btn-success">Update</button>-->
+          <div style="padding-top: 14px;"></div>
+
+
+          <form>
+
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputCity">Nouvelle date départ</label>
+                <div class="input-group">
+                  <input class="form-control" placeholder="yyyy-mm-dd"
+                         name="dpd" [(ngModel)]="_YMD_depart"  ngbDatepicker>
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-primary calendar" (click)="d.toggle()" type="button"></button>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputState">Nouvelle heure départ</label>
+                <input [value]= "date_depart_prevue| date: 'HH:mm' :'UTC'" type="time" id="default-picker" class="form-control" placeholder="Select time">
+              </div>
+
+              <div class="form-group col-md-6">
+                <label for="inputCity">Nouvelle date retour</label>
+                <div class="input-group">
+                  <input class="form-control" placeholder="yyyy-mm-dd"
+                  [(ngModel)]="_YMD_retour"  name="dp"  ngbDatepicker #d="ngbDatepicker">
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-primary calendar" (click)="d.toggle()" type="button"></button>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputState">Nouvelle heure retour</label>
+                <input [value]= "date_retour_prevue| date: 'HH:mm' :'UTC'" type="time" id="default-picker" class="form-control" placeholder="Select time">
+              </div>
+
+              
+              
+
+
+
+            </div>
+           
+            <button type="submit" class="btn btn-primary">Valider</button>
+          </form>
+
+
+    </div>
+</div>

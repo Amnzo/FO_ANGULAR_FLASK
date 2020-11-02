@@ -1,0 +1,44 @@
+<div class="login-wrapper">
+
+    <div class="card">
+        <div class="card-body">
+
+            <form class="form-signin" (ngSubmit)="onSubmit(signInForm)" #signInForm="ngForm">
+                <h1 class="h3 mb-3 font-weight-normal">Se Connecter</h1>
+
+                <label for="inputlogin" class="sr-only">Login </label>
+                <input type="text" id="inputLogin" class="form-control" name="login" placeholder="Login" ngModel
+                    required autofocus>
+
+                <label for="inputPassword" class="sr-only">Password</label>
+                <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password"
+                    autocomplete="on" ngModel required>
+
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+
+                <div class="alert alert-danger" role="alert" *ngIf="areCredentialsInvalid">
+                  login ou mot de passe incorrect
+                </div>
+
+            </form>
+            <ol>
+              <li hidden="true">
+                <mat-form-field >
+                  <mat-label>code entreprise</mat-label>
+                  <input matInput [(ngModel)]="name">
+                </mat-form-field>
+              </li>
+        
+              <li *ngIf="code_entreprise">
+                You chose: <i>{{code_entreprise}}</i>
+              </li>
+            </ol>
+            <!--
+               <button mat-raised-button (click)="openDialog()">Créer un compte</button>
+            //-->
+          
+          <button class="btn btn-lg btn-primary btn-block" (click)="openDialog()" >Créer un compte</button>
+           
+        </div>
+    </div>
+</div>
