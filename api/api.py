@@ -29,11 +29,11 @@ def login():
     print(request.authorization)
     print(request.get_json()['login'])
 
-
-    connection = pymysql.connect(host='79.137.40.57',
-                             user='traceo',
-                             password='traceo12102009',
-                             db='arval',
+   #connextion to server
+    connection = pymysql.connect(host='#',
+                             user='#',
+                             password='#',
+                             db='#',
                              charset='utf8mb4',
                              cursorclass=pymysql.cursors.DictCursor)
     try:
@@ -59,11 +59,10 @@ def login():
 @jwt_required
 def entreprise():
     msg = '' 
-
-    connection = pymysql.connect(host='79.137.40.57',
-                             user='traceo',
-                             password='traceo12102009',
-                             db='arval',
+    connection = pymysql.connect(host='#',
+                             user='#',
+                             password='#',
+                             db='#',
                              charset='utf8mb4',
                              cursorclass=pymysql.cursors.DictCursor)
     try:
@@ -94,10 +93,10 @@ def reservations():
     result = []
 
 
-    connection = pymysql.connect(host='79.137.40.57',
-                             user='traceo',
-                             password='traceo12102009',
-                             db='arval',
+  connection = pymysql.connect(host='#',
+                             user='#',
+                             password='#',
+                             db='#',
                              charset='utf8mb4',
                              cursorclass=pymysql.cursors.DictCursor)
     try:
@@ -130,10 +129,10 @@ def reservations():
 def users():
     msg = '' 
 
-    connection = pymysql.connect(host='79.137.40.57',
-                             user='traceo',
-                             password='traceo12102009',
-                             db='arval',
+  connection = pymysql.connect(host='#',
+                             user='#',
+                             password='#',
+                             db='#',
                              charset='utf8mb4',
                              cursorclass=pymysql.cursors.DictCursor)
     try:
@@ -156,10 +155,10 @@ def users():
 def resabyid():
     msg = '' 
 
-    connection = pymysql.connect(host='79.137.40.57',
-                             user='traceo',
-                             password='traceo12102009',
-                             db='arval',
+  connection = pymysql.connect(host='#',
+                             user='#',
+                             password='#',
+                             db='#',
                              charset='utf8mb4',
                              cursorclass=pymysql.cursors.DictCursor)
     try:
@@ -191,10 +190,10 @@ def resabyid():
 def formulepro():
     msg = '' 
 
-    connection = pymysql.connect(host='79.137.40.57',
-                             user='traceo',
-                             password='traceo12102009',
-                             db='arval',
+  connection = pymysql.connect(host='#',
+                             user='#',
+                             password='#',
+                             db='#',
                              charset='utf8mb4',
                              cursorclass=pymysql.cursors.DictCursor)
     try:
@@ -223,10 +222,10 @@ def formulepro():
 def parkings():
     msg = '' 
 
-    connection = pymysql.connect(host='79.137.40.57',
-                             user='traceo',
-                             password='traceo12102009',
-                             db='arval',
+  connection = pymysql.connect(host='#',
+                             user='#',
+                             password='#',
+                             db='#',
                              charset='utf8mb4',
                              cursorclass=pymysql.cursors.DictCursor)
     try:
@@ -252,10 +251,10 @@ def parkings():
 def vehicules():
     msg = '' 
 
-    connection = pymysql.connect(host='79.137.40.57',
-                             user='traceo',
-                             password='traceo12102009',
-                             db='arval',
+  connection = pymysql.connect(host='#',
+                             user='#',
+                             password='#',
+                             db='#',
                              charset='utf8mb4',
                              cursorclass=pymysql.cursors.DictCursor)
     try:
